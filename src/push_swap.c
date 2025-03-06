@@ -6,11 +6,13 @@
 /*   By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 16:30:40 by crizapat          #+#    #+#             */
-/*   Updated: 2025/03/06 16:31:00 by crizapat         ###   ########.fr       */
+/*   Updated: 2025/03/06 16:39:46 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int main(void)
+#include "../push_swap.h"
+
+int main(int argc, char **argv)
 {
 	return (0);
 }
