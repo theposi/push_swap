@@ -22,12 +22,7 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	else {
-		i = 0;
-		while(i < argc)
-		{
-			printf("Argument: %d, position %d\n", ft_atoi(argv[i]), i);
-			i++;
-		}
+		args_checker(argc, argv);
 	}
 	return (0);
 }

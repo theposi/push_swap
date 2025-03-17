@@ -20,4 +20,6 @@ typedef	int	t_bool;
 #define TRUE 0
 #define FALSE 1
 
+t_bool args_checker(int argc, char **argv);
+
 #endif 
