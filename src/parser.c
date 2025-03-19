@@ -12,7 +12,6 @@
 
 #include "../push_swap.h"
 
-// TODO: Hacer un parceo para evitar que nos entren letras desde parametros, doble signos, signos aislados
 
 t_bool args_checker(int argc, char **argv)
 {
@@ -24,10 +23,10 @@ t_bool args_checker(int argc, char **argv)
 	{
 		ia = 0;
 		if (argv[ic][ia] == '\0') {
-			printf("Falso\n");
+			printf("Void\n");
 			return (FALSE);
 		}
-		if ((argv[ic][ia] == '+' || argv[ic][ia] == '-') && (argv[ic][ia + 1] != '\0' && ft_isdigit(argv[ic][ia + 1])))
+		if ((argv[ic][ia] == '+' || argv[ic][ia] == '-') && (argv[ic][ia + 1] != '\0'))
 			ia++;
 		while (argv[ic][ia] != '\0')
 		{
