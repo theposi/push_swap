@@ -43,34 +43,34 @@ OBJ = $(SRC:.c=.o)
 all: $(TARGET)
 
 $(LIBFT):
-	@echo -e "$(CYAN)📦 Compiling libft...$(NC)"
+	@echo "$(CYAN)📦 Compiling libft...$(NC)"
 	@make -sC $(LIBFT_DIR) 
-	@echo -e "$(GREEN)✅ Libft compiled successfully!.$(NC)"
+	@echo "$(GREEN)✅ Libft compiled successfully!.$(NC)"
 
 # TODO: refactor printf compilation because of error
 $(PRINTF):
-	@echo -e "$(CYAN)📦 Compiling ft_printf...$(NC)"
+	@echo "$(CYAN)📦 Compiling ft_printf...$(NC)"
 	@make -sC $(PRINTF_DIR) 
-	@echo -e "$(GREEN)✅ ft_printf compiled successfully!$(NC)"
+	@echo "$(GREEN)✅ ft_printf compiled successfully!$(NC)"
 
-$(TARGET): $(OBJ) $(LIBFT)
-	@echo -e "$(CYAN) 📦 Compiling push swap...$(NC)"
-	$(CC) $(FLAGS) $(OBJ) $(LIBFT) $(PRINTF) -o $(TARGET)
-	@echo -e "$(MAG)✅ Push swap compiled successfully!.$(NC)"
+$(TARGET): $(OBJ) $(LIBFT) $(PRINTF)
+	@echo "$(CYAN) 📦 Compiling push swap...$(NC)"
+	@$(CC) $(FLAGS) $(OBJ) $(LIBFT) $(PRINTF) -o $(TARGET)
+	@echo "$(MAG)✅ Push swap compiled successfully!.$(NC)"
 
 %.o: %.c
-	@echo -e "$(CYAN)🛠️Compiling $< → $@...$(NC)"
-	$(CC) $(FLAGS) -c $< -o $@
+	@echo "$(CYAN)🛠️Compiling $< → $@...$(NC)"
+	@$(CC) $(FLAGS) -c $< -o $@
 
 clean: 
-	make -sC $(LIBFT_DIR) fclean
-	make -sC $(PRINTF_DIR) fclean
-	@echo -e "$(RED)🗑️ Cleaning object files.$(NC)"
-	$(RM) $(OBJ)
+	@make -sC $(LIBFT_DIR) fclean
+	@make -sC $(PRINTF_DIR) fclean
+	@echo "$(RED)🗑️ Cleaning object files.$(NC)"
+	@$(RM) $(OBJ)
 
 fclean:
-	@echo -e "$(RED)🗑️ Cleaning executables and libraries.$(NC)"
-	$(RM) $(TARGET)
+	@echo "$(RED)🗑️ Cleaning executables and libraries.$(NC)"
+	@$(RM) $(TARGET)
 
 re: fclean all
 
