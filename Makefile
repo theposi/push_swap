@@ -47,7 +47,6 @@ $(LIBFT):
 	@make -sC $(LIBFT_DIR) 
 	@echo "$(GREEN)✅ Libft compiled successfully!.$(NC)"
 
-# TODO: refactor printf compilation because of error
 $(PRINTF):
 	@echo "$(CYAN)📦 Compiling ft_printf...$(NC)"
 	@make -sC $(PRINTF_DIR) 
