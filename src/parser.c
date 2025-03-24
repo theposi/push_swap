@@ -12,7 +12,6 @@
 
 #include "../push_swap.h"
 
-
 t_bool args_checker(int argc, char **argv)
 {
 	int ic;
@@ -22,22 +21,30 @@ t_bool args_checker(int argc, char **argv)
 	while (ic < argc)
 	{
 		ia = 0;
-		if (argv[ic][ia] == '\0') {
-			printf("Void\n");
+		if (argv[ic][ia] == '\0')
+		{
+			ft_printf("Error.");
 			return (FALSE);
 		}
-		if ((argv[ic][ia] == '+' || argv[ic][ia] == '-') && (argv[ic][ia + 1] != '\0'))
-			ia++;
+
 		while (argv[ic][ia] != '\0')
 		{
-			if (!ft_isdigit(argv[ic][ia]) && argv[ic][ia] != ' ') {
-				printf("Doblemente falso de toda falsedad madafaka\n");
+			if ((argv[ic][ia] == '+' || argv[ic][ia] == '-') && argv[ic][ia + 1] != '\0' && !ft_isdigit(argv[ic][ia + 1]))
+			{
+				ft_printf("Error not number after sign.");
+				return (FALSE);
+			}
+			if (argv[ic][ia] != ' ' && !ft_isdigit(argv[ic][ia]))
+			{
+				ft_printf("Error Not number.");
 				return (FALSE);
 			}
 			ia++;
 		}
-		ic++;
-	}
+		ic++;	
+}
 	printf("Todos los argumentos son válidos\n");
 	return (TRUE);
 }
+
+
