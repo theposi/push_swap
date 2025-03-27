@@ -6,7 +6,7 @@
 /*   By: crizapat <crizapat@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 14:37:19 by crizapat          #+#    #+#             */
-/*   Updated: 2024/03/26 14:26:37 by crizapat         ###   ########.fr       */
+/*   Updated: 2025/03/27 16:17:16 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,13 @@ size_t				ft_strlen(const char *str);
  * @return Puntero a la cadena establecida
  */
 void				*ft_memset(void *ptr, int charac, size_t len);
+
+/**
+ * Verifica si el caracter actual es un espacio.
+ * @param char caracter a verificar 
+ * @return int 0 o 1 en caso de verdadero o falso 
+ */
+int					ft_is_space(char character);
 
 /**
  * Establece los primeros len bytes del área de memoria
@@ -360,7 +367,7 @@ t_list				*ft_lstlast(t_list *lst);
  * @param lst  dirección de un puntero al primer nodo de una lista.
  * @param new  un puntero al nodo que añadir al final de la lista.
 */
-void				ft_lstadd_back(t_list **lst, t_list *new);
+void				ft_lstadd_back(t_list **lst, t_list *new_node);
 
 /**
  * Libera la memoria del nodo pasado como argumento

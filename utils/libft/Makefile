@@ -6,7 +6,7 @@
 #    By: crizapat <crizapat@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/29 14:24:57 by crizapat          #+#    #+#              #
-#    Updated: 2025/01/31 15:00:21 by crizapat         ###   ########.fr        #
+#    Updated: 2025/03/27 16:08:53 by crizapat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ SRC			=	ft_isalpha.c	\
 				ft_strdup.c		\
 				ft_substr.c		\
 				ft_strjoin.c	\
+				ft_is_space.c	\
 				ft_strtrim.c	\
 				ft_split.c		\
 				ft_itoa.c		\

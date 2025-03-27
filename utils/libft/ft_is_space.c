@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_is_space.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crizapat <crizapat@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/17 18:43:43 by crizapat          #+#    #+#             */
-/*   Updated: 2025/03/27 16:15:12 by crizapat         ###   ########.fr       */
+/*   Created: 2025/03/27 16:07:36 by crizapat          #+#    #+#             */
+/*   Updated: 2025/03/27 16:11:44 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new_node)
+int ft_is_space(char character)
 {
-	t_list	*last_node;
-
-	if (!lst || !new_node)
-		return ;
-	if (!*lst)
-	{
-		*lst = new_node;
-		return ;
-	}
-	last_node = ft_lstlast(*lst);
-	last_node->next = new_node;
+	return (character == 32 || (character >= 9 && character <= 13));
 }
