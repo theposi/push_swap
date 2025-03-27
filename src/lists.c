@@ -6,7 +6,7 @@
 /*   By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 10:54:18 by crizapat          #+#    #+#             */
-/*   Updated: 2025/03/27 11:19:32 by crizapat         ###   ########.fr       */
+/*   Updated: 2025/03/27 16:48:40 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 /*
  * @warning MALLOC
  */
-t_node *create_node(int number)
+t_node	*create_node(int number)
 {
-	t_node *new_node;
+	t_node	*new_node;
+
 	new_node = (t_node *)malloc(sizeof(t_node));
 	if (!new_node)
 		return (NULL);
@@ -27,10 +28,10 @@ t_node *create_node(int number)
 	return (new_node);
 }
 
-void stack_cleaner(t_node **node)
+void	stack_cleaner(t_node **node)
 {
-	t_node *actual_node;	
-	t_node *temp_node;
+	t_node	*actual_node;	
+	t_node	*temp_node;
 
 	actual_node = *node;
 	while (actual_node)
