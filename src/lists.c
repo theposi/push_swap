@@ -6,7 +6,7 @@
 /*   By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 10:54:18 by crizapat          #+#    #+#             */
-/*   Updated: 2025/03/27 16:48:40 by crizapat         ###   ########.fr       */
+/*   Updated: 2025/03/27 17:23:41 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,25 @@ void	stack_cleaner(t_node **node)
 		actual_node = temp_node;
 	}
 	*node = NULL;
+}
+
+t_bool	node_to_stack(t_stack *stack, int number)
+{
+	t_node	*new_node;
+	t_node	*actual_node;
+
+	new_node = create_node(number);
+	if (!new_node)
+		return (FALSE);
+	if (stack->node == NULL)	
+		stack->node = new_node;
+	else
+	{
+		actual_node = stack->node;
+		while (actual_node->next != NULL)
+			actual_node = actual_node->next;
+		actual_node->next = new_node;
+	}
+	stack->size++;
+	return (TRUE);
 }
