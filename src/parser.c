@@ -22,28 +22,19 @@ t_bool args_checker(int argc, char **argv)
 	{
 		ia = 0;
 		if (argv[ic][ia] == '\0')
-		{
-			ft_printf("Error.");
 			return (FALSE);
-		}
-
 		while (argv[ic][ia] != '\0')
 		{
-			if ((argv[ic][ia] == '+' || argv[ic][ia] == '-') && argv[ic][ia + 1] != '\0' && !ft_isdigit(argv[ic][ia + 1]))
-			{
-				ft_printf("Error not number after sign.");
+			if ((argv[ic][ia] == '+' || argv[ic][ia] == '-') && argv[ic][ia + 1] != '\0' && ft_isdigit(argv[ic][ia + 1]))
+				ia++;
+			if (ft_isdigit(argv[ic][ia]) && (argv[ic][ia + 1] == '+' || argv[ic][ia + 1] == '-'))
 				return (FALSE);
-			}
 			if (argv[ic][ia] != ' ' && !ft_isdigit(argv[ic][ia]))
-			{
-				ft_printf("Error Not number.");
 				return (FALSE);
-			}
 			ia++;
 		}
 		ic++;	
 }
-	printf("Todos los argumentos son válidos\n");
 	return (TRUE);
 }
 
