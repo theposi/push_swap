@@ -6,7 +6,7 @@
 /*   By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 16:32:00 by crizapat          #+#    #+#             */
-/*   Updated: 2025/04/10 17:36:37 by crizapat         ###   ########.fr       */
+/*   Updated: 2025/04/10 18:06:59 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void push_a(t_stack *a, t_stack *b)
 	a->size++;
 	b->size--;
 	write(STDOUT_FILENO, "pa", sizeof(char) * 3);
+	write(STDOUT_FILENO, "\n", sizeof(char));
 }
 
 void push_b(t_stack *a, t_stack *b)
@@ -43,5 +44,6 @@ void push_b(t_stack *a, t_stack *b)
 	b->size++;
 	a->size--;
 	write(STDOUT_FILENO, "pb", sizeof(char) * 3);
+	write(STDOUT_FILENO, "\n", sizeof(char));
 }
 
