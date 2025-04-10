@@ -6,7 +6,7 @@
 /*   By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 16:28:39 by crizapat          #+#    #+#             */
-/*   Updated: 2025/03/27 11:22:18 by crizapat         ###   ########.fr       */
+/*   Updated: 2025/04/10 17:26:21 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_node {
 
 typedef struct s_stack {
 	size_t			size;
-	t_node			*node;
+	t_node			*head;
 } t_stack;
 
 t_bool args_checker(int argc, char **argv);
