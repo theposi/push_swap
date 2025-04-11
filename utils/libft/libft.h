@@ -6,7 +6,7 @@
 /*   By: crizapat <crizapat@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 14:37:19 by crizapat          #+#    #+#             */
-/*   Updated: 2025/03/27 16:17:16 by crizapat         ###   ########.fr       */
+/*   Updated: 2024/03/26 14:26:37 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,13 @@ size_t				ft_strlen(const char *str);
  */
 void				*ft_memset(void *ptr, int charac, size_t len);
 
-/**
+/*
  * Verifica si el caracter actual es un espacio.
  * @param char caracter a verificar 
  * @return int 0 o 1 en caso de verdadero o falso 
  */
 int					ft_is_space(char character);
+
 
 /**
  * Establece los primeros len bytes del área de memoria
@@ -144,7 +145,7 @@ int					ft_toupper(int charac);
 int					ft_tolower(int charac);
 
 /**
- * Busca un caracter en una cadena
+ * Busca un caracter en una cadena.
  * @param str Cadena en la que buscar.
  * @param charac Caracter a buscar.
  * @return Retorna un puntero a la primera aparición del carácter en la cadena.
@@ -153,7 +154,7 @@ int					ft_tolower(int charac);
 char				*ft_strchr(const char *str, int charac);
 
 /**
- * Busca un caracter en una cadena empezando por el final
+ * Busca un caracter en una cadena empezando por el final.
  * @param str Cadena en la que buscar.
  * @param chr Caracter a buscar.
  * @return Retorna un puntero a la primera aparición del carácter en la cadena.
@@ -367,7 +368,7 @@ t_list				*ft_lstlast(t_list *lst);
  * @param lst  dirección de un puntero al primer nodo de una lista.
  * @param new  un puntero al nodo que añadir al final de la lista.
 */
-void				ft_lstadd_back(t_list **lst, t_list *new_node);
+void				ft_lstadd_back(t_list **lst, t_list *new);
 
 /**
  * Libera la memoria del nodo pasado como argumento

@@ -6,50 +6,63 @@
 #    By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/13 15:14:23 by crizapat          #+#    #+#              #
-#    Updated: 2025/03/13 16:13:57 by crizapat         ###   ########.fr        #
+#    Updated: 2025/04/11 13:01:11 by crizapat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #	FLAGS ___________________________________
-CC		=	cc
-FLAGS 	= 	-Wall -Werror -Wextra -g3 -fsanitize=address
-INCLUDE = 	-I
-RM 		= 	rm -f
+CC			=	cc
+INCLUDE 	= 	-I ./includes
+FLAGS 		= 	-Wall -Werror -Wextra -g3 -fsanitize=address $(INCLUDE)
+RM 			= 	rm -f
 
 #	CONF___________________________________
-TARGET 	= 	push_swap	
-GREEN	=	\e[32m
-RED		=	\e[31m
-MAG		=	\e[35m
-CYAN	=	\e[36m
-NC		=	\e[0m
+TARGET 		= 	push_swap
+GREEN		=	\e[32m
+RED			=	\e[31m
+MAG			=	\e[35m
+CYAN		=	\e[36m
+NC			=	\e[0m
+
+#	DIR___________________________________
+SRC_DIR 	= 	src
+MVTS_DIR 	= 	movements	
+LIBFT_DIR 	= 	utils/libft
+PRINTF_DIR 	= 	utils/ft_printf
+
+#	SRCS___________________________________
+LIBFT 		= 	$(LIBFT_DIR)/libft.a
+PRINTF 		= 	$(PRINTF_DIR)/libftprintf.a
+
+SRCS 		= 	push_swap.c 		\
+	  			parser.c 			\
+				lists.c 			\
+				arg_caster.c		
+
+# WIP
+# implement movements and other subfolders structure and routes
+# for compilation
+MVTS		=	pushes.c 			\
+				reverse_rotate.c 	\
+				rotates.c			\
+				swaps.c				
 
 
-#	DIR___________________________________	
-SRC_DIR = ./src/
-LIBFT_DIR = ./utils/libft/
-PRINTF_DIR = ./utils/ft_printf/
-
-#	SRCS___________________________________	
-LIBFT 	= 	$(LIBFT_DIR)libft.a
-PRINTF 	= 	$(PRINTF_DIR)libftprintf.a
-
-SRC 	= 	$(SRC_DIR)push_swap.c \
-	  		$(SRC_DIR)parser.c
-
-# OBJ___________________________________	
-OBJ = $(SRC:.c=.o)
+MVTS 		=	$(addprefix $(SRC_DIR)/, $(SRCS))
+SRC 		=	$(addprefix $(SRC_DIR)/, $(SRCS))
+# OBJ___________________________________
+OBJ 		= 	$(SRC:.c=.o)
 
 all: $(TARGET)
 
 $(LIBFT):
 	@echo "$(CYAN)📦 Compiling libft...$(NC)"
-	@make -sC $(LIBFT_DIR) 
+	@make -sC $(LIBFT_DIR)
 	@echo "$(GREEN)✅ Libft compiled successfully!.$(NC)"
 
 $(PRINTF):
 	@echo "$(CYAN)📦 Compiling ft_printf...$(NC)"
-	@make -sC $(PRINTF_DIR) 
+	@make -sC $(PRINTF_DIR)
 	@echo "$(GREEN)✅ ft_printf compiled successfully!$(NC)"
 
 $(TARGET): $(OBJ) $(LIBFT) $(PRINTF)
@@ -61,7 +74,7 @@ $(TARGET): $(OBJ) $(LIBFT) $(PRINTF)
 	@echo "$(CYAN)🛠️Compiling $< → $@...$(NC)"
 	@$(CC) $(FLAGS) -c $< -o $@
 
-clean: 
+clean:
 	@make -sC $(LIBFT_DIR) fclean
 	@make -sC $(PRINTF_DIR) fclean
 	@echo "$(RED)🗑️ Cleaning object files.$(NC)"
