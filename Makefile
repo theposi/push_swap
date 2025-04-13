@@ -48,8 +48,8 @@ MVTS		=	pushes.c 			\
 				swaps.c				
 
 
-MVTS 		=	$(addprefix $(SRC_DIR)/, $(SRCS))
 SRC 		=	$(addprefix $(SRC_DIR)/, $(SRCS))
+MVTS 		=	$(addprefix $(SRC_DIR)/$(MVTS_DIR)/, $(SRCS))
 # OBJ___________________________________
 OBJ 		= 	$(SRC:.c=.o)
 
