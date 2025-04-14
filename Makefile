@@ -26,7 +26,7 @@ NC			=	\e[0m
 
 #	DIR___________________________________
 SRC_DIR 	= 	src
-MVTS_DIR 	= 	movements	
+MVTS_DIR 	= 	movements
 LIBFT_DIR 	= 	utils/libft
 PRINTF_DIR 	= 	utils/ft_printf
 
@@ -39,9 +39,6 @@ SRCS 		= 	push_swap.c 		\
 				lists.c 			\
 				arg_caster.c		
 
-# WIP
-# implement movements and other subfolders structure and routes
-# for compilation
 MVTS		=	pushes.c 			\
 				reverse_rotate.c 	\
 				rotates.c			\
