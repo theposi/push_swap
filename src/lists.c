@@ -30,15 +30,15 @@ t_node	*create_node(int number)
 
 void	stack_cleaner(t_node **node)
 {
-	t_node	*actual_node;
+	t_node	*current_node;
 	t_node	*temp_node;
 
-	actual_node = *node;
-	while (actual_node)
+	current_node = *node;
+	while (current_node)
 	{
-		temp_node = actual_node->next;
-		free(actual_node);
-		actual_node = temp_node;
+		temp_node = current_node->next;
+		free(current_node);
+		current_node = temp_node;
 	}
 	*node = NULL;
 }
@@ -46,7 +46,7 @@ void	stack_cleaner(t_node **node)
 t_bool	node_to_stack(t_stack *stack, int number)
 {
 	t_node	*new_node;
-	t_node	*actual_node;
+	t_node	*current_node;
 
 	new_node = create_node(number);
 	if (!new_node)
@@ -55,10 +55,10 @@ t_bool	node_to_stack(t_stack *stack, int number)
 		stack->head = new_node;
 	else
 	{
-		actual_node = stack->head;
-		while (actual_node->next != NULL)
-			actual_node = actual_node->next;
-		actual_node->next = new_node;
+		current_node = stack->head;
+		while (current_node->next != NULL)
+			current_node = current_node->next;
+		current_node->next = new_node;
 	}
 	stack->size++;
 	return (TRUE);

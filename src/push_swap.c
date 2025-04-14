@@ -27,7 +27,7 @@ t_bool fill_stack(t_stack *stack_a, int argc, char **argv)
 			if (ft_atoi_limits_checker(argv[i], &number, &j) == FALSE)
 				return (stack_cleaner(&stack_a->head), FALSE);
 			if (node_to_stack(stack_a, number) == FALSE)
-				return (stack_cleaner(&stack_a->head) ,FALSE);
+				return (stack_cleaner(&stack_a->head), FALSE);
 		}
 		i++;
 	}
