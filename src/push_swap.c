@@ -6,7 +6,7 @@
 /*   By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 16:30:40 by crizapat          #+#    #+#             */
-/*   Updated: 2025/04/18 13:09:00 by crizapat         ###   ########.fr       */
+/*   Updated: 2025/04/18 13:23:56 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ t_bool fill_stack(t_stack *stack_a, int argc, char **argv)
 		}
 		i++;
 	}
+	indexer(stack_a);
 	return (TRUE);
 }
 
