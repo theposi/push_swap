@@ -6,7 +6,7 @@
 #    By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/13 15:14:23 by crizapat          #+#    #+#              #
-#    Updated: 2025/04/18 12:58:59 by crizapat         ###   ########.fr        #
+#    Updated: 2025/04/18 13:58:24 by crizapat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,8 @@ MVTS		=	pushes.c 			\
 				rotates.c			\
 				swaps.c				
 
-AGTHMS		=	hard_sort.c
+AGTHMS		=	hard_sort.c			\
+				k_sort.c
 
 SRC 		=	$(addprefix $(SRC_DIR)/, $(SRCS))
 MVTS 		=	$(addprefix $(SRC_DIR)/$(MVTS_DIR)/, $(MVTS))
