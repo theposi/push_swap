@@ -6,7 +6,7 @@
 /*   By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 16:30:40 by crizapat          #+#    #+#             */
-/*   Updated: 2025/04/11 12:53:12 by crizapat         ###   ########.fr       */
+/*   Updated: 2025/04/18 13:09:00 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,6 @@ t_bool indexer(t_stack *stack_a)
 		curren_node->index = index;
 		curren_node = curren_node->next;
 	}
-	// WIP verify this implementation
-	// stack_a->size = index + 1;	
 	return (TRUE);
 }
 
