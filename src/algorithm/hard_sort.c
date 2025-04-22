@@ -45,4 +45,12 @@ void sort_3_numbers(t_stack *stack_a)
 	}
 	else if (first->index < second->index)
 		reverse_rotate_a(stack_a);
+	else if (first->index > second->index && first->index > third->index)
+	{
+		rotate_a(stack_a);
+		if (second->index > third->index)
+			swap_a(stack_a);
+	}
+	else 
+		swap_a(stack_a);
 }
