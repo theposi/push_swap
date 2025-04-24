@@ -6,7 +6,7 @@
 /*   By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 12:48:44 by crizapat          #+#    #+#             */
-/*   Updated: 2025/04/18 18:00:56 by crizapat         ###   ########.fr       */
+/*   Updated: 2025/04/24 17:30:46 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,6 @@ void sort_2_numbers(t_stack *stack_a)
 		swap_a(stack_a);
 }
 
-/*
-	WIP
-	Finish the 4 and 5 numbers sorting	
-*/
 void sort_3_numbers(t_stack *stack_a)
 {
 	t_node *first;
@@ -54,3 +50,13 @@ void sort_3_numbers(t_stack *stack_a)
 	else 
 		swap_a(stack_a);
 }
+
+/*
+	WIP
+	Finish the 4 and 5 numbers sorting	
+*/
+void sort_4_numbers(t_stack *stack_a, t_stack *stack_b)
+{
+
+}
+
