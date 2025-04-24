@@ -6,7 +6,7 @@
 /*   By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 16:28:39 by crizapat          #+#    #+#             */
-/*   Updated: 2025/04/18 17:05:21 by crizapat         ###   ########.fr       */
+/*   Updated: 2025/04/24 17:26:09 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,7 @@ void	push_b(t_stack *a, t_stack *b);
 t_bool	is_sorted(t_stack *stack_a);
 void	sort_2_numbers(t_stack *stack_a);
 void	sort_3_numbers(t_stack *stack_a);
+size_t	count_steps_to_index(t_stack *stack_a, size_t index);
+size_t	get_min_index(t_stack *stack_a);
 
 #endif
