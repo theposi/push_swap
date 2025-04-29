@@ -6,7 +6,7 @@
 /*   By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 12:48:44 by crizapat          #+#    #+#             */
-/*   Updated: 2025/04/24 17:30:46 by crizapat         ###   ########.fr       */
+/*   Updated: 2025/04/29 11:45:07 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,44 @@ void sort_3_numbers(t_stack *stack_a)
 		swap_a(stack_a);
 }
 
-/*
-	WIP
-	Finish the 4 and 5 numbers sorting	
-*/
 void sort_4_numbers(t_stack *stack_a, t_stack *stack_b)
 {
+	size_t get_min_node_index;
+	size_t movements_cost;
 
+	get_min_node_index = get_min_index(stack_a);
+	movements_cost = count_steps_to_index(stack_a, get_min_node_index);
+	if (is_sorted(stack_a) == TRUE)
+		return ;
+	while (stack_a->head->index != get_min_node_index)
+	{
+		if (movements_cost > 1)
+			reverse_rotate_a(stack_a);
+		else
+			rotate_a(stack_a);
+	}
+	push_b(stack_a, stack_b);
+	sort_3_numbers(stack_a);
+	push_a(stack_a, stack_b);
 }
 
+void sort_5_numbers(t_stack *stack_a, t_stack *stack_b)
+{
+	size_t get_min_node_index;
+	size_t movements_cost;
+
+	get_min_node_index = get_min_index(stack_a);
+	movements_cost = count_steps_to_index(stack_a, get_min_node_index);
+	if (is_sorted(stack_a) == TRUE)
+		return ;
+	while (stack_a->head->index != get_min_node_index)
+	{
+		if (movements_cost > 3)
+			reverse_rotate_a(stack_a);
+		else
+			rotate_a(stack_a);
+	}
+	push_b(stack_a, stack_b);
+	sort_4_numbers(stack_a, stack_b);
+	push_a(stack_a, stack_b);
+}

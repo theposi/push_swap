@@ -6,7 +6,7 @@
 #    By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/13 15:14:23 by crizapat          #+#    #+#              #
-#    Updated: 2025/04/24 17:23:04 by crizapat         ###   ########.fr        #
+#    Updated: 2025/04/29 15:30:30 by crizapat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,22 +38,23 @@ PRINTF 		= 	$(PRINTF_DIR)/libftprintf.a
 SRCS 		= 	push_swap.c 		\
 	  			parser.c 			\
 				lists.c 			\
-				arg_caster.c		
+				arg_caster.c
 
 MVTS		=	pushes.c 			\
 				reverse_rotate.c 	\
 				rotates.c			\
-				swaps.c				
+				swaps.c
 
 AGTHMS		=	hard_sort.c			\
 				k_sort.c			\
 				movements_cost.c
 
+#	PEFIX__________________________________
 SRC 		=	$(addprefix $(SRC_DIR)/, $(SRCS))
-MVTS 		=	$(addprefix $(SRC_DIR)/$(MVTS_DIR)/, $(MVTS))
+MVT 		=	$(addprefix $(SRC_DIR)/$(MVTS_DIR)/, $(MVTS))
 AGTHM		=	$(addprefix $(SRC_DIR)/$(AGTHM_DIR)/, $(AGTHMS))
-# OBJ___________________________________
-OBJ 		= 	$(SRC:.c=.o)
+PACKAGES    =	$(SRC) $(MVT) $(AGTHM)
+OBJS 		= 	$(PACKAGES:%.c=%.o)
 
 all: $(TARGET)
 
@@ -67,9 +68,9 @@ $(PRINTF):
 	@make -sC $(PRINTF_DIR)
 	@echo "$(GREEN)✅ ft_printf compiled successfully!$(NC)"
 
-$(TARGET): $(OBJ) $(LIBFT) $(PRINTF)
+$(TARGET): $(OBJS) $(LIBFT) $(PRINTF)
 	@echo "$(CYAN) 📦 Compiling push swap...$(NC)"
-	@$(CC) $(FLAGS) $(OBJ) $(LIBFT) $(PRINTF) -o $(TARGET)
+	@$(CC) $(FLAGS) $(OBJS) $(LIBFT) $(PRINTF) -o $(TARGET)
 	@echo "$(MAG)✅ Push swap compiled successfully!.$(NC)"
 
 %.o: %.c
@@ -80,7 +81,7 @@ clean:
 	@make -sC $(LIBFT_DIR) fclean
 	@make -sC $(PRINTF_DIR) fclean
 	@echo "$(RED)🗑️ Cleaning object files.$(NC)"
-	@$(RM) $(OBJ)
+	@$(RM) $(OBJS)
 
 fclean:
 	@echo "$(RED)🗑️ Cleaning executables and libraries.$(NC)"

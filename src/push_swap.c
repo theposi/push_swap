@@ -6,7 +6,7 @@
 /*   By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 16:30:40 by crizapat          #+#    #+#             */
-/*   Updated: 2025/04/18 13:23:56 by crizapat         ###   ########.fr       */
+/*   Updated: 2025/04/29 13:58:24 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,24 +31,23 @@ t_bool fill_stack(t_stack *stack_a, int argc, char **argv)
 		}
 		i++;
 	}
-	indexer(stack_a);
 	return (TRUE);
 }
 
-t_bool indexer(t_stack *stack_a)
+t_bool indexer(t_stacks stacks)
 {
 	t_node	*curren_node;	
 	t_node	*node_to_compare;	
 	size_t	index;
 
-	if (!stack_a->head || !stack_a->size)
+	if (!stacks.stack_a.head || !stacks.stack_a.size)
 		return (FALSE);
 
-	curren_node = stack_a->head;	
+	curren_node = stacks.stack_a.head;	
 	while (curren_node)
 	{
 		index = 0;
-		node_to_compare = stack_a->head; 
+		node_to_compare = stacks.stack_a.head; 
 		while (node_to_compare)
 		{
 			if (node_to_compare->number < curren_node->number)
@@ -63,13 +62,27 @@ t_bool indexer(t_stack *stack_a)
 
 int main(int argc, char **argv)
 {
-	if(argc == 1)
+	t_stacks stacks;
+
+	if (argc < 2)
+		return (EXIT_FAILURE);
+	stacks.stack_a.head = NULL;
+	stacks.stack_a.size = 0;
+	stacks.stack_b.head = NULL;
+	stacks.stack_b.size = 0;
+	if (args_checker(argc, argv) == TRUE)
 	{
-		printf("Not enough parameters\n");
-		exit(EXIT_FAILURE);
+		if (fill_stack(&(stacks.stack_a), argc, argv) == FALSE) 
+			return (ft_printf("ERROR.\n"), EXIT_FAILURE);
+		if (check_duplicate(stacks.stack_a) == FALSE || indexer(stacks))
+			return (stack_cleaner(&stacks.stack_a.head), EXIT_FAILURE);
 	}
-	else {
-		args_checker(argc, argv);
-	}
+	else
+		return (ft_printf("ERROR.\n"), EXIT_FAILURE);
+	if (is_sorted(&stacks.stack_a) == FALSE) 
+		sorter(&stacks, stacks.stack_a.size);
+	stack_cleaner(&stacks.stack_a.head);
+	stack_cleaner(&stacks.stack_b.head);
+
 	return (EXIT_SUCCESS);
 }
