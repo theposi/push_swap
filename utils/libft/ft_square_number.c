@@ -6,7 +6,7 @@
 /*   By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 10:49:50 by crizapat          #+#    #+#             */
-/*   Updated: 2025/04/29 10:54:02 by crizapat         ###   ########.fr       */
+/*   Updated: 2025/04/29 13:01:14 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int ft_square_number(int number)
 {
-	size_t i;
+	int i;
 
 	if (number == 0)
 		return (0);
