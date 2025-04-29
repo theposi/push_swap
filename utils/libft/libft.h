@@ -6,7 +6,7 @@
 /*   By: crizapat <crizapat@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 14:37:19 by crizapat          #+#    #+#             */
-/*   Updated: 2024/03/26 14:26:37 by crizapat         ###   ########.fr       */
+/*   Updated: 2025/04/29 10:57:08 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,13 @@ int					ft_is_space(char character);
  * @param len Número de bytes a establecer.
  */
 void				ft_bzero(void *ptr, size_t len);
+
+/**
+ * Calcula la raíz cuadrada de un número.
+ * @param number Número a calcular su raíz.
+ * @return Número entero de la raíz cuadrada.
+ */
+int					ft_square_number(int number);
 
 /**
  * Copia len bytes de src a dest

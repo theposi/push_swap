@@ -6,7 +6,7 @@
 #    By: crizapat <crizapat@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/29 14:24:57 by crizapat          #+#    #+#              #
-#    Updated: 2025/01/31 15:00:21 by crizapat         ###   ########.fr        #
+#    Updated: 2025/04/29 10:58:27 by crizapat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRC			=	ft_isalpha.c	\
 				ft_strlcat.c	\
 				ft_memset.c		\
 				ft_bzero.c		\
+				ft_square_number.c\
 				ft_memcpy.c		\
 				ft_memmove.c	\
 				ft_strrchr.c	\
