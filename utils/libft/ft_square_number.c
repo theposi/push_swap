@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 10:49:50 by crizapat          #+#    #+#             */
-/*   Updated: 2025/04/29 13:01:14 by crizapat         ###   ########.fr       */
+/*   Created: 2025/04/26 13:55:46 by crizapat          #+#    #+#             */
+/*   Updated: 2025/04/26 14:04:47 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_square_number(int number)
+int	ft_square_number(int number)
 {
-	int i;
+	int	i;
 
 	if (number == 0)
 		return (0);

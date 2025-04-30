@@ -6,7 +6,7 @@
 /*   By: crizapat <crizapat@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 14:37:19 by crizapat          #+#    #+#             */
-/*   Updated: 2025/04/29 10:57:08 by crizapat         ###   ########.fr       */
+/*   Updated: 2025/04/26 14:05:20 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ void				*ft_memset(void *ptr, int charac, size_t len);
  */
 int					ft_is_space(char character);
 
-
 /**
  * Establece los primeros len bytes del área de memoria
  * apuntada por ptr al valor 0.
@@ -94,9 +93,9 @@ int					ft_is_space(char character);
 void				ft_bzero(void *ptr, size_t len);
 
 /**
- * Calcula la raíz cuadrada de un número.
- * @param number Número a calcular su raíz.
- * @return Número entero de la raíz cuadrada.
+ * Calcula la raíz cuadrada de un número. 
+ * @param number número del que queremos la raiz.
+ * @return raíz cuadrada del parámetro
  */
 int					ft_square_number(int number);
 

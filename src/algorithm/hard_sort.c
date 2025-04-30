@@ -6,7 +6,7 @@
 /*   By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 12:48:44 by crizapat          #+#    #+#             */
-/*   Updated: 2025/04/29 11:45:07 by crizapat         ###   ########.fr       */
+/*   Updated: 2025/04/24 17:30:46 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,14 @@ void sort_3_numbers(t_stack *stack_a)
 
 void sort_4_numbers(t_stack *stack_a, t_stack *stack_b)
 {
-	size_t get_min_node_index;
-	size_t movements_cost;
+	size_t	min_numb_on_stack;
+	size_t	movements_cost;
 
-	get_min_node_index = get_min_index(stack_a);
-	movements_cost = count_steps_to_index(stack_a, get_min_node_index);
+	min_numb_on_stack = get_min_index(stack_a);
+	movements_cost = count_steps_to_index(stack_a, min_numb_on_stack);
 	if (is_sorted(stack_a) == TRUE)
 		return ;
-	while (stack_a->head->index != get_min_node_index)
+	while (stack_a->head->index != min_numb_on_stack)
 	{
 		if (movements_cost > 1)
 			reverse_rotate_a(stack_a);
@@ -74,15 +74,14 @@ void sort_4_numbers(t_stack *stack_a, t_stack *stack_b)
 
 void sort_5_numbers(t_stack *stack_a, t_stack *stack_b)
 {
-	size_t get_min_node_index;
+	size_t min_numb_on_stack;
 	size_t movements_cost;
 
-	get_min_node_index = get_min_index(stack_a);
-	movements_cost = count_steps_to_index(stack_a, get_min_node_index);
+	min_numb_on_stack = get_min_index(stack_a);
+	movements_cost = count_steps_to_index(stack_a, min_numb_on_stack);
 	if (is_sorted(stack_a) == TRUE)
 		return ;
-	while (stack_a->head->index != get_min_node_index)
-	{
+	while (stack_a->head->index != min_numb_on_stack) {
 		if (movements_cost > 3)
 			reverse_rotate_a(stack_a);
 		else
@@ -92,3 +91,4 @@ void sort_5_numbers(t_stack *stack_a, t_stack *stack_b)
 	sort_4_numbers(stack_a, stack_b);
 	push_a(stack_a, stack_b);
 }
+

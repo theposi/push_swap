@@ -36,3 +36,24 @@ t_bool	ft_atoi_limits_checker(const char *str, int *result, int *str_index)
 	*result = temp_result * sign;
 	return (TRUE);
 }
+
+t_bool check_duplicate(t_stack stack_a)
+{
+	t_node *node_iterator;
+	t_node *temp_node;
+
+	node_iterator = stack_a.head;
+	while (node_iterator != NULL && node_iterator->next != NULL)
+	{
+		temp_node = node_iterator;
+		while (temp_node != NULL)
+		{
+			if (node_iterator->number == temp_node->number)
+				return (FALSE);
+			temp_node = temp_node->next;
+		}
+		node_iterator = node_iterator->next;
+	}
+	return (TRUE);
+}
+

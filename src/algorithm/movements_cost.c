@@ -19,7 +19,7 @@ size_t count_steps_to_index(t_stack *stack_a, size_t index)
 
 	current_node = stack_a->head;
 	steps = 0;
-	while(current_node)
+	while (current_node)
 	{
 		if (current_node->index == index)
 			return (steps);
@@ -36,7 +36,7 @@ size_t get_min_index(t_stack *stack_a)
 
 	current_node = stack_a->head;
 	min_index = current_node->index;
-	while(current_node)
+	while (current_node)
 	{
 		if (current_node->index < min_index)
 			min_index = current_node->index;
