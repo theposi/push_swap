@@ -55,16 +55,16 @@ void	swap_a(t_stack *stack_a);
 void	swap_b(t_stack *stack_b);
 void	swap_both(t_stacks *stacks);
 
-void	rotate_a(t_stack *a);
-void	rotate_b(t_stack *b);
-void	rotate_both(t_stack *a, t_stack *b);
+void	rotate_a(t_stack *stack_a);
+void	rotate_b(t_stack *stack_b);
+void	rotate_both(t_stack *stack_a, t_stack *stack_b);
 
-void	reverse_rotate_a(t_stack *a);
-void	reverse_rotate_b(t_stack *b);
-void	reverse_rotate_both(t_stack *a, t_stack *b);
+void	reverse_rotate_a(t_stack *stack_a);
+void	reverse_rotate_b(t_stack *stack_b);
+void	reverse_rotate_both(t_stack *stack_a, t_stack *stack_b);
 
-void	push_a(t_stack *a, t_stack *b);
-void	push_b(t_stack *a, t_stack *b);
+void	push_a(t_stack *stack_a, t_stack *stack_b);
+void	push_b(t_stack *stack_a, t_stack *stack_b);
 
 //		SORT FUNCTIONS
 void	sort_2_numbers(t_stack *stack_a);
