@@ -12,16 +12,16 @@
 
 #include "../../includes/push_swap.h"
 
-void rotate_a(t_stack *a)
+void rotate_a(t_stack *stack_a)
 {
 	t_node	*temp_node;
 	t_node	*current_node;
 
-	if (!a || !a->head || !a->head->next)
+	if (!stack_a || !stack_a->head || !stack_a->head->next)
 		return ;
-	temp_node = a->head;
-	a->head = temp_node->next;
-	current_node = a->head;
+	temp_node = stack_a->head;
+	stack_a->head = temp_node->next;
+	current_node = stack_a->head;
 	while (current_node->next != NULL)
 		current_node = current_node->next;
 	current_node->next = temp_node;
@@ -29,16 +29,16 @@ void rotate_a(t_stack *a)
 	write(STDOUT_FILENO, "ra\n", sizeof(char) * 3);
 }
 
-void rotate_b(t_stack *b)
+void rotate_b(t_stack *stack_b)
 {
 	t_node	*temp_node;
 	t_node	*current_node;
 
-	if (!b || !b->head || !b->head->next)
+	if (!stack_b || !stack_b->head || !stack_b->head->next)
 		return ;
-	temp_node = b->head;
-	b->head = temp_node->next;
-	current_node = b->head;
+	temp_node = stack_b->head;
+	stack_b->head = temp_node->next;
+	current_node = stack_b->head;
 	while (current_node->next != NULL)
 		current_node = current_node->next;
 	current_node->next = temp_node;
@@ -46,11 +46,12 @@ void rotate_b(t_stack *b)
 	write(STDOUT_FILENO, "rb\n", sizeof(char) * 3);
 }
 
-void rotate_both(t_stack *a, t_stack *b)
+void rotate_both(t_stack *stack_a, t_stack *stack_b)
 {
-	if (!a || !b)
+	if (!stack_a || !stack_b)
 		return ;
-	rotate_a(a);
-	rotate_a(b);
+	rotate_a(stack_a);
+	rotate_a(stack_b);
 	write(STDOUT_FILENO, "rr\n", sizeof(char) * 3);
 }
+

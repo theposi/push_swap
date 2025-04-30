@@ -50,3 +50,4 @@ void swap_both(t_stacks *stacks)
 	swap_b(&stacks->stack_b);
 	write(STDOUT_FILENO, "ss\n", sizeof(char) * 3);
 }
+

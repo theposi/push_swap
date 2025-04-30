@@ -12,44 +12,45 @@
 
 #include "../../includes/push_swap.h"
 
-void	reverse_rotate_a(t_stack *a)
+void	reverse_rotate_a(t_stack *stack_a)
 {
 	t_node	*temp_node;
 	t_node	*current_node;
 
-	if (!a || !a->head || !a->head->next)
+	if (!stack_a || !stack_a->head || !stack_a->head->next)
 		return ;
-	current_node = a->head;
+	current_node = stack_a->head;
 	while (current_node->next->next != NULL)
 		current_node = current_node->next;
 	temp_node = current_node->next;
 	current_node->next = NULL;
-	temp_node->next = a->head;
-	a->head = temp_node;
+	temp_node->next = stack_a->head;
+	stack_a->head = temp_node;
 	write(STDOUT_FILENO, "rra\n", sizeof(char) * 4);
 }
 
-void	reverse_rotate_b(t_stack *b)
+void	reverse_rotate_b(t_stack *stack_b)
 {
 	t_node	*temp_node;
 	t_node	*current_node;
 
-	if (!b || !b->head || !b->head->next)
+	if (!stack_b || !stack_b->head || !stack_b->head->next)
 		return ;
-	current_node = b->head;
+	current_node = stack_b->head;
 	while (current_node->next->next != NULL)
 		current_node = current_node->next;
 	temp_node = current_node->next;
 	current_node->next = NULL;
-	temp_node->next = b->head;
+	temp_node->next = stack_b->head;
 	write(STDOUT_FILENO, "rrb\n", sizeof(char) * 4);
 }
 
-void	reverse_rotate_both(t_stack *a, t_stack *b)
+void	reverse_rotate_both(t_stack *stack_a, t_stack *stack_b)
 {
-	if (!a || !b)
+	if (!stack_a || !stack_b)
 		return ;
-	reverse_rotate_a(a);
-	reverse_rotate_a(b);
+	reverse_rotate_a(stack_a);
+	reverse_rotate_a(stack_b);
 	write(STDOUT_FILENO, "rrr\n", sizeof(char) * 4);
 }
+

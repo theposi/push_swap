@@ -12,33 +12,33 @@
 
 #include "../../includes/push_swap.h"
 
-void	push_a(t_stack *a, t_stack *b)
+void	push_a(t_stack *stack_a, t_stack *stack_b)
 {
 	t_node *node_to_a;
 
-	if (!a || !a->head)
+	if (!stack_a || !stack_a->head)
 		return ;
-	node_to_a = b->head;
-	b->head = node_to_a->next;
-	node_to_a->next = a->head;
-	a->head = node_to_a;
-	a->size++;
-	b->size--;
+	node_to_a = stack_b->head;
+	stack_b->head = node_to_a->next;
+	node_to_a->next = stack_a->head;
+	stack_a->head = node_to_a;
+	stack_a->size++;
+	stack_b->size--;
 	write(STDOUT_FILENO, "pa\n", sizeof(char) * 3);
 }
 
-void	push_b(t_stack *a, t_stack *b)
+void	push_b(t_stack *stack_a, t_stack *stack_b)
 {
 	t_node *node_to_b;
 
-	if (!b || !b->head)
+	if (!stack_b || !stack_b->head)
 		return ;
-	node_to_b = a->head;
-	a->head = node_to_b->next;
-	node_to_b->next = b->head;
-	b->head = node_to_b;
-	b->size++;
-	a->size--;
+	node_to_b = stack_a->head;
+	stack_a->head = node_to_b->next;
+	node_to_b->next = stack_b->head;
+	stack_b->head = node_to_b;
+	stack_b->size++;
+	stack_a->size--;
 	write(STDOUT_FILENO, "pb\n", sizeof(char) * 3);
 }
 
