@@ -12,7 +12,7 @@
 
 #include "../../includes/push_swap.h"
 
-void rotate_a(t_stack *stack_a)
+void rotate_a(t_stack *stack_a, t_bool print)
 {
 	t_node	*temp_node;
 	t_node	*current_node;
@@ -26,10 +26,11 @@ void rotate_a(t_stack *stack_a)
 		current_node = current_node->next;
 	current_node->next = temp_node;
 	temp_node->next = NULL;
-	write(STDOUT_FILENO, "ra\n", sizeof(char) * 3);
+	if (print == TRUE)
+		write(STDOUT_FILENO, "ra\n", sizeof(char) * 3);
 }
 
-void rotate_b(t_stack *stack_b)
+void rotate_b(t_stack *stack_b, t_bool print)
 {
 	t_node	*temp_node;
 	t_node	*current_node;
@@ -43,15 +44,17 @@ void rotate_b(t_stack *stack_b)
 		current_node = current_node->next;
 	current_node->next = temp_node;
 	temp_node->next = NULL;
-	write(STDOUT_FILENO, "rb\n", sizeof(char) * 3);
+	if (print == TRUE)
+		write(STDOUT_FILENO, "rb\n", sizeof(char) * 3);
 }
 
-void rotate_both(t_stack *stack_a, t_stack *stack_b)
+void rotate_both(t_stack *stack_a, t_stack *stack_b, t_bool print)
 {
 	if (!stack_a || !stack_b)
 		return ;
-	rotate_a(stack_a);
-	rotate_a(stack_b);
-	write(STDOUT_FILENO, "rr\n", sizeof(char) * 3);
+	rotate_a(stack_a, FALSE);
+	rotate_a(stack_b, FALSE);
+	if (print == TRUE)
+		write(STDOUT_FILENO, "rr\n", sizeof(char) * 3);
 }
 

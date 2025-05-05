@@ -38,11 +38,11 @@ void k_sort_2(t_stack *stack_a, t_stack *stack_b)
 		while (stack_b->head->index != stack_b->size - 1)
 		{
 			if (cost >= stack_b->size / 2)		
-				reverse_rotate_b(stack_b);
+				reverse_rotate_b(stack_b, TRUE);
 			else
-				rotate_b(stack_b);
+				rotate_b(stack_b, TRUE);
 		}
-		push_a(stack_a, stack_b);
+		push_a(stack_a, stack_b, TRUE);
 	}
 }
 
@@ -58,20 +58,20 @@ void k_sort_1(t_stack *stack_a, t_stack *stack_b)
 	{
 		if (stack_a->head->index <= movements_counter)
 		{
-			push_b(stack_a, stack_b);
+			push_b(stack_a, stack_b, TRUE);
 			movements_counter++;
 		}
 		else if (stack_a->head->index <= movements_counter + magic_number)
 		{
-			push_b(stack_a, stack_b);
+			push_b(stack_a, stack_b, TRUE);
 			movements_counter++;
 			if (stack_a->head->index <= movements_counter + magic_number)
-				rotate_b(stack_b);
+				rotate_b(stack_b, TRUE);
 			else
-				rotate_both(stack_a, stack_b);
+				rotate_both(stack_a, stack_b, TRUE);
 		}
 		else
-			rotate_a(stack_a);
+			rotate_a(stack_a, TRUE);
 	}
 	k_sort_2(stack_a, stack_b);
 }

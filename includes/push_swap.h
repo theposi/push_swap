@@ -51,20 +51,20 @@ void	stack_cleaner(t_node **node);
 t_bool	node_to_stack(t_stack *stack, int number);
 
 //		NODES MOVEMENTS
-void	swap_a(t_stack *stack_a);
-void	swap_b(t_stack *stack_b);
-void	swap_both(t_stacks *stacks);
+void	swap_a(t_stack *stack_a, t_bool print);
+void	swap_b(t_stack *stack_b, t_bool print);
+void	swap_both(t_stacks *stacks, t_bool print);
 
-void	rotate_a(t_stack *stack_a);
-void	rotate_b(t_stack *stack_b);
-void	rotate_both(t_stack *stack_a, t_stack *stack_b);
+void	rotate_a(t_stack *stack_a, t_bool print);
+void	rotate_b(t_stack *stack_a, t_bool print);
+void	rotate_both(t_stack *stack_a, t_stack *stack_b, t_bool print);
 
-void	reverse_rotate_a(t_stack *stack_a);
-void	reverse_rotate_b(t_stack *stack_b);
-void	reverse_rotate_both(t_stack *stack_a, t_stack *stack_b);
+void	reverse_rotate_a(t_stack *stack_a, t_bool print);
+void	reverse_rotate_b(t_stack *stack_b, t_bool print);
+void	reverse_rotate_both(t_stack *stack_a, t_stack *stack_b, t_bool print);
 
-void	push_a(t_stack *stack_a, t_stack *stack_b);
-void	push_b(t_stack *stack_a, t_stack *stack_b);
+void	push_a(t_stack *stack_a, t_stack *stack_b, t_bool print);
+void	push_b(t_stack *stack_a, t_stack *stack_b, t_bool print);
 
 //		SORT FUNCTIONS
 void	sort_2_numbers(t_stack *stack_a);

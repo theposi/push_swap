@@ -12,7 +12,7 @@
 
 #include "../../includes/push_swap.h"
 
-void	push_a(t_stack *stack_a, t_stack *stack_b)
+void	push_a(t_stack *stack_a, t_stack *stack_b, t_bool print)
 {
 	t_node *node_to_a;
 
@@ -24,10 +24,11 @@ void	push_a(t_stack *stack_a, t_stack *stack_b)
 	stack_a->head = node_to_a;
 	stack_a->size++;
 	stack_b->size--;
-	write(STDOUT_FILENO, "pa\n", sizeof(char) * 3);
+	if (print == TRUE)
+		write(STDOUT_FILENO, "pa\n", sizeof(char) * 3);
 }
 
-void	push_b(t_stack *stack_a, t_stack *stack_b)
+void	push_b(t_stack *stack_a, t_stack *stack_b, t_bool print)
 {
 	t_node *node_to_b;
 
@@ -39,6 +40,7 @@ void	push_b(t_stack *stack_a, t_stack *stack_b)
 	stack_b->head = node_to_b;
 	stack_b->size++;
 	stack_a->size--;
-	write(STDOUT_FILENO, "pb\n", sizeof(char) * 3);
+	if (print == TRUE)
+		write(STDOUT_FILENO, "pb\n", sizeof(char) * 3);
 }
 

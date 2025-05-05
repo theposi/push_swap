@@ -12,7 +12,7 @@
 
 #include "../../includes/push_swap.h"
 
-void swap_a(t_stack *stack_a)
+void swap_a(t_stack *stack_a, t_bool print)
 {
 	t_node	*first_node;
 	t_node	*second_node;
@@ -24,10 +24,11 @@ void swap_a(t_stack *stack_a)
 	first_node->next = second_node->next;
 	second_node->next = first_node;
 	stack_a->head = second_node;
-	write(STDOUT_FILENO, "sa\n", sizeof(char) * 3);
+	if (print == TRUE)
+		write(STDOUT_FILENO, "sa\n", sizeof(char) * 3);
 }
 
-void swap_b(t_stack *stack_b)
+void swap_b(t_stack *stack_b, t_bool print)
 {
 	t_node *first_node;
 	t_node *second_node;
@@ -39,15 +40,17 @@ void swap_b(t_stack *stack_b)
 	first_node->next = second_node->next;
 	second_node->next = first_node;
 	stack_b->head = second_node;
-	write(STDOUT_FILENO, "sb\n", sizeof(char) * 3);
+	if (print == TRUE)
+		write(STDOUT_FILENO, "sb\n", sizeof(char) * 3);
 }
 
-void swap_both(t_stacks *stacks)
+void swap_both(t_stacks *stacks, t_bool print)
 {
 	if (!stacks)
 		return ;
-	swap_a(&stacks->stack_a);
-	swap_b(&stacks->stack_b);
-	write(STDOUT_FILENO, "ss\n", sizeof(char) * 3);
+	swap_a(&stacks->stack_a, FALSE);
+	swap_b(&stacks->stack_b, FALSE);
+	if (print == TRUE)
+		write(STDOUT_FILENO, "ss\n", sizeof(char) * 3);
 }
 

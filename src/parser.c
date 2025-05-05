@@ -39,4 +39,3 @@ t_bool	args_checker(int argc, char **argv)
 	}
 	return (TRUE);
 }
-
