@@ -45,7 +45,7 @@ t_bool check_duplicate(t_stack stack_a)
 	node_iterator = stack_a.head;
 	while (node_iterator != NULL && node_iterator->next != NULL)
 	{
-		temp_node = node_iterator;
+		temp_node = node_iterator->next;
 		while (temp_node != NULL)
 		{
 			if (node_iterator->number == temp_node->number)

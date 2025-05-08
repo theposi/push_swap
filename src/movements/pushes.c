@@ -16,7 +16,7 @@ void	push_a(t_stack *stack_a, t_stack *stack_b, t_bool print)
 {
 	t_node *node_to_a;
 
-	if (!stack_a || !stack_a->head)
+	if (!stack_b || !stack_b->head)
 		return ;
 	node_to_a = stack_b->head;
 	stack_b->head = node_to_a->next;
@@ -32,7 +32,7 @@ void	push_b(t_stack *stack_a, t_stack *stack_b, t_bool print)
 {
 	t_node *node_to_b;
 
-	if (!stack_b || !stack_b->head)
+	if (!stack_a || !stack_a->head)
 		return ;
 	node_to_b = stack_a->head;
 	stack_a->head = node_to_b->next;
