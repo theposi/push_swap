@@ -6,7 +6,7 @@
 /*   By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 16:30:40 by crizapat          #+#    #+#             */
-/*   Updated: 2025/04/29 13:58:24 by crizapat         ###   ########.fr       */
+/*   Updated: 2025/05/09 11:13:19 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,17 +60,6 @@ t_bool indexer(t_stacks stacks)
 	return (TRUE);
 }
 
-void	print_stack(t_node *head, char name)
-{
-	printf("Stack %c: ", name);
-	while (head)
-	{
-		printf("%d ", head->number);
-		head = head->next;
-	}
-	printf("\n");
-}
-
 int main(int argc, char **argv)
 {
 	t_stacks stacks;
@@ -88,7 +77,7 @@ int main(int argc, char **argv)
 		if (check_duplicate(stacks.stack_a) == FALSE || indexer(stacks))
 		{
 		        ft_putstr_fd("Error\n", 2);
-				return (stack_cleaner(&stacks.stack_a.head), EXIT_FAILURE);
+			return (stack_cleaner(&stacks.stack_a.head), EXIT_FAILURE);
 		}
 	}
 	else
