@@ -34,10 +34,10 @@ void k_sort_2(t_stack *stack_a, t_stack *stack_b)
 
 	while (stack_b->size != 0)
 	{
-		cost = count_steps_to_index(stack_a, stack_b->size - 1);
+		cost = count_steps_to_index(stack_b, stack_b->size - 1);
 		while (stack_b->head->index != stack_b->size - 1)
 		{
-			if (cost >= stack_b->size / 2)		
+			if (cost >= stack_b->size / 2)
 				reverse_rotate_b(stack_b, TRUE);
 			else
 				rotate_b(stack_b, TRUE);
@@ -52,7 +52,7 @@ void k_sort_1(t_stack *stack_a, t_stack *stack_b)
 	size_t magic_number;
 
 	movements_counter = 0;
-	magic_number = ft_square_number(stack_a->size) * 133 / 100; 
+	magic_number = ft_square_number(stack_a->size) * 133 / 100;
 
 	while (stack_a->size != 0)
 	{

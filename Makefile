@@ -6,14 +6,14 @@
 #    By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/13 15:14:23 by crizapat          #+#    #+#              #
-#    Updated: 2025/04/24 17:23:04 by crizapat         ###   ########.fr        #
+#    Updated: 2025/05/08 23:07:33 by crizapat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #	FLAGS ___________________________________
 CC			=	cc
 INCLUDE 	= 	-I ./includes
-FLAGS 		= 	-Wall -Werror -Wextra -g3 -fsanitize=address $(INCLUDE)
+FLAGS 		= 	-Wall -Werror -Wextra -g3 $(INCLUDE)
 RM 			= 	rm -f
 
 #	CONF___________________________________
@@ -74,7 +74,7 @@ $(TARGET): $(OBJS) $(LIBFT) $(PRINTF)
 	@echo "$(MAG)✅ Push swap compiled successfully!.$(NC)"
 
 %.o: %.c
-	@echo "$(CYAN)🛠️Compiling $< → $@...$(NC)"
+	@echo "$(CYAN)🛠️ Compiling $< → $@...$(NC)"
 	@$(CC) $(FLAGS) -c $< -o $@
 
 clean:

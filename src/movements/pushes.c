@@ -43,4 +43,3 @@ void	push_b(t_stack *stack_a, t_stack *stack_b, t_bool print)
 	if (print == TRUE)
 		write(STDOUT_FILENO, "pb\n", sizeof(char) * 3);
 }
-

@@ -12,12 +12,12 @@
 
 #include "../../includes/push_swap.h"
 
-size_t count_steps_to_index(t_stack *stack_a, size_t index)
+size_t count_steps_to_index(t_stack *stack, size_t index)
 {
 	t_node	*current_node;
 	size_t	steps;
 
-	current_node = stack_a->head;
+	current_node = stack->head;
 	steps = 0;
 	while (current_node)
 	{
@@ -44,4 +44,3 @@ size_t get_min_index(t_stack *stack_a)
 	}
 	return (min_index);
 }
-

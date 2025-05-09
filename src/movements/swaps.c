@@ -17,7 +17,7 @@ void swap_a(t_stack *stack_a, t_bool print)
 	t_node	*first_node;
 	t_node	*second_node;
 
-	if(!stack_a || !stack_a->head || !stack_a->head->next)
+	if (!stack_a || !stack_a->head || !stack_a->head->next)
 		return ;
 	first_node = stack_a->head;
 	second_node = first_node->next;
@@ -33,7 +33,7 @@ void swap_b(t_stack *stack_b, t_bool print)
 	t_node *first_node;
 	t_node *second_node;
 
-	if(!stack_b || !stack_b->head || !stack_b->head->next)
+	if (!stack_b || !stack_b->head || !stack_b->head->next)
 		return ;
 	first_node = stack_b->head;
 	second_node = first_node->next;

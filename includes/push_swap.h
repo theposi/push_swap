@@ -77,7 +77,7 @@ t_bool	is_sorted(t_stack *stack_a);
 void	sorter(t_stacks *stacks, size_t size);
 
 t_bool	indexer(t_stacks stacks);
-size_t	count_steps_to_index(t_stack *stack_a, size_t index);
+size_t	count_steps_to_index(t_stack *stack, size_t index);
 size_t	get_min_index(t_stack *stack_a);
 
 #endif

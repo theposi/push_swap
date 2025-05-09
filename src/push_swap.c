@@ -36,18 +36,18 @@ t_bool fill_stack(t_stack *stack_a, int argc, char **argv)
 
 t_bool indexer(t_stacks stacks)
 {
-	t_node	*curren_node;	
-	t_node	*node_to_compare;	
+	t_node	*curren_node;
+	t_node	*node_to_compare;
 	size_t	index;
 
 	if (!stacks.stack_a.head || !stacks.stack_a.size)
 		return (FALSE);
 
-	curren_node = stacks.stack_a.head;	
+	curren_node = stacks.stack_a.head;
 	while (curren_node)
 	{
 		index = 0;
-		node_to_compare = stacks.stack_a.head; 
+		node_to_compare = stacks.stack_a.head;
 		while (node_to_compare)
 		{
 			if (node_to_compare->number < curren_node->number)
@@ -58,6 +58,17 @@ t_bool indexer(t_stacks stacks)
 		curren_node = curren_node->next;
 	}
 	return (TRUE);
+}
+
+void	print_stack(t_node *head, char name)
+{
+	printf("Stack %c: ", name);
+	while (head)
+	{
+		printf("%d ", head->number);
+		head = head->next;
+	}
+	printf("\n");
 }
 
 int main(int argc, char **argv)
@@ -72,18 +83,20 @@ int main(int argc, char **argv)
 	stacks.stack_b.size = 0;
 	if (args_checker(argc, argv) == TRUE)
 	{
-		if (fill_stack(&(stacks.stack_a), argc, argv) == FALSE) 
-			return (ft_printf("ERROR.\n"), EXIT_FAILURE);
+		if (fill_stack(&(stacks.stack_a), argc, argv) == FALSE)
+			return (ft_putstr_fd("Error\n", 2), EXIT_FAILURE);
 		if (check_duplicate(stacks.stack_a) == FALSE || indexer(stacks))
-			return (stack_cleaner(&stacks.stack_a.head), EXIT_FAILURE);
+		{
+		        ft_putstr_fd("Error\n", 2);
+				return (stack_cleaner(&stacks.stack_a.head), EXIT_FAILURE);
+		}
 	}
 	else
-		return (ft_printf("ERROR.\n"), EXIT_FAILURE);
-	if (is_sorted(&stacks.stack_a) == FALSE) 
+	   return (ft_putstr_fd("Error\n", 2), EXIT_FAILURE);
+	if (is_sorted(&stacks.stack_a) == FALSE)
 		sorter(&stacks, stacks.stack_a.size);
 	stack_cleaner(&stacks.stack_a.head);
 	stack_cleaner(&stacks.stack_b.head);
 
 	return (EXIT_SUCCESS);
 }
-

@@ -43,6 +43,7 @@ void	reverse_rotate_b(t_stack *stack_b, t_bool print)
 	temp_node = current_node->next;
 	current_node->next = NULL;
 	temp_node->next = stack_b->head;
+	stack_b->head =	temp_node;
 	if (print == TRUE)
 		write(STDOUT_FILENO, "rrb\n", sizeof(char) * 4);
 }
