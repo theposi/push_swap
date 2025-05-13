@@ -6,13 +6,13 @@
 /*   By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 10:26:28 by crizapat          #+#    #+#             */
-/*   Updated: 2025/04/11 10:56:56 by crizapat         ###   ########.fr       */
+/*   Updated: 2025/05/12 10:10:50 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void rotate_a(t_stack *stack_a, t_bool print)
+void	rotate_a(t_stack *stack_a, t_bool print)
 {
 	t_node	*temp_node;
 	t_node	*current_node;
@@ -30,7 +30,7 @@ void rotate_a(t_stack *stack_a, t_bool print)
 		write(STDOUT_FILENO, "ra\n", sizeof(char) * 3);
 }
 
-void rotate_b(t_stack *stack_b, t_bool print)
+void	rotate_b(t_stack *stack_b, t_bool print)
 {
 	t_node	*temp_node;
 	t_node	*current_node;
@@ -48,7 +48,7 @@ void rotate_b(t_stack *stack_b, t_bool print)
 		write(STDOUT_FILENO, "rb\n", sizeof(char) * 3);
 }
 
-void rotate_both(t_stack *stack_a, t_stack *stack_b, t_bool print)
+void	rotate_both(t_stack *stack_a, t_stack *stack_b, t_bool print)
 {
 	if (!stack_a || !stack_b)
 		return ;
@@ -57,4 +57,3 @@ void rotate_both(t_stack *stack_a, t_stack *stack_b, t_bool print)
 	if (print == TRUE)
 		write(STDOUT_FILENO, "rr\n", sizeof(char) * 3);
 }
-

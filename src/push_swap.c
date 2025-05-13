@@ -6,13 +6,13 @@
 /*   By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 16:30:40 by crizapat          #+#    #+#             */
-/*   Updated: 2025/05/09 11:13:19 by crizapat         ###   ########.fr       */
+/*   Updated: 2025/05/12 09:48:32 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_bool fill_stack(t_stack *stack_a, int argc, char **argv)
+t_bool	fill_stack(t_stack *stack_a, int argc, char **argv)
 {
 	int	i;
 	int	j;
@@ -34,7 +34,7 @@ t_bool fill_stack(t_stack *stack_a, int argc, char **argv)
 	return (TRUE);
 }
 
-t_bool indexer(t_stacks stacks)
+t_bool	indexer(t_stacks stacks)
 {
 	t_node	*curren_node;
 	t_node	*node_to_compare;
@@ -42,7 +42,6 @@ t_bool indexer(t_stacks stacks)
 
 	if (!stacks.stack_a.head || !stacks.stack_a.size)
 		return (FALSE);
-
 	curren_node = stacks.stack_a.head;
 	while (curren_node)
 	{
@@ -60,9 +59,9 @@ t_bool indexer(t_stacks stacks)
 	return (TRUE);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_stacks stacks;
+	t_stacks	stacks;
 
 	if (argc < 2)
 		return (EXIT_FAILURE);
@@ -76,16 +75,15 @@ int main(int argc, char **argv)
 			return (ft_putstr_fd("Error\n", 2), EXIT_FAILURE);
 		if (check_duplicate(stacks.stack_a) == FALSE || indexer(stacks))
 		{
-		        ft_putstr_fd("Error\n", 2);
+			ft_putstr_fd("Error\n", 2);
 			return (stack_cleaner(&stacks.stack_a.head), EXIT_FAILURE);
 		}
 	}
 	else
-	   return (ft_putstr_fd("Error\n", 2), EXIT_FAILURE);
+		return (ft_putstr_fd("Error\n", 2), EXIT_FAILURE);
 	if (is_sorted(&stacks.stack_a) == FALSE)
 		sorter(&stacks, stacks.stack_a.size);
 	stack_cleaner(&stacks.stack_a.head);
 	stack_cleaner(&stacks.stack_b.head);
-
 	return (EXIT_SUCCESS);
 }

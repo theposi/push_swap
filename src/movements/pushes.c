@@ -6,7 +6,7 @@
 /*   By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 09:41:48 by crizapat          #+#    #+#             */
-/*   Updated: 2025/04/09 09:41:53 by crizapat         ###   ########.fr       */
+/*   Updated: 2025/05/12 10:11:46 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	push_a(t_stack *stack_a, t_stack *stack_b, t_bool print)
 {
-	t_node *node_to_a;
+	t_node	*node_to_a;
 
 	if (!stack_b || !stack_b->head)
 		return ;
@@ -30,7 +30,7 @@ void	push_a(t_stack *stack_a, t_stack *stack_b, t_bool print)
 
 void	push_b(t_stack *stack_a, t_stack *stack_b, t_bool print)
 {
-	t_node *node_to_b;
+	t_node	*node_to_b;
 
 	if (!stack_a || !stack_a->head)
 		return ;

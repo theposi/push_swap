@@ -6,13 +6,13 @@
 /*   By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 17:21:20 by crizapat          #+#    #+#             */
-/*   Updated: 2025/04/24 17:21:58 by crizapat         ###   ########.fr       */
+/*   Updated: 2025/05/12 09:56:36 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-size_t count_steps_to_index(t_stack *stack, size_t index)
+size_t	count_steps_to_index(t_stack *stack, size_t index)
 {
 	t_node	*current_node;
 	size_t	steps;
@@ -29,7 +29,7 @@ size_t count_steps_to_index(t_stack *stack, size_t index)
 	return (steps);
 }
 
-size_t get_min_index(t_stack *stack_a)
+size_t	get_min_index(t_stack *stack_a)
 {
 	t_node	*current_node;
 	size_t	min_index;

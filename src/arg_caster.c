@@ -6,7 +6,7 @@
 /*   By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 11:20:45 by crizapat          #+#    #+#             */
-/*   Updated: 2025/04/11 12:41:40 by crizapat         ###   ########.fr       */
+/*   Updated: 2025/05/12 09:42:42 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ t_bool	ft_atoi_limits_checker(const char *str, int *result, int *str_index)
 	return (TRUE);
 }
 
-t_bool check_duplicate(t_stack stack_a)
+t_bool	check_duplicate(t_stack stack_a)
 {
-	t_node *node_iterator;
-	t_node *temp_node;
+	t_node	*node_iterator;
+	t_node	*temp_node;
 
 	node_iterator = stack_a.head;
 	while (node_iterator != NULL && node_iterator->next != NULL)
@@ -56,4 +56,3 @@ t_bool check_duplicate(t_stack stack_a)
 	}
 	return (TRUE);
 }
-

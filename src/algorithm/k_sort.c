@@ -6,7 +6,7 @@
 /*   By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 13:57:56 by crizapat          #+#    #+#             */
-/*   Updated: 2025/04/26 14:07:58 by crizapat         ###   ########.fr       */
+/*   Updated: 2025/05/12 10:00:36 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 t_bool	is_sorted(t_stack *stack_a)
 {
-	t_node *current_node;
+	t_node	*current_node;
 
-	if(!stack_a || stack_a->size < 1)
+	if (!stack_a || stack_a->size < 1)
 		return (TRUE);
 	current_node = stack_a->head;
 	while (current_node->next)
@@ -28,9 +28,9 @@ t_bool	is_sorted(t_stack *stack_a)
 	return (TRUE);
 }
 
-void k_sort_2(t_stack *stack_a, t_stack *stack_b)
+void	k_sort_2(t_stack *stack_a, t_stack *stack_b)
 {
-	size_t cost;
+	size_t	cost;
 
 	while (stack_b->size != 0)
 	{
@@ -46,14 +46,13 @@ void k_sort_2(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
-void k_sort_1(t_stack *stack_a, t_stack *stack_b)
+void	k_sort_1(t_stack *stack_a, t_stack *stack_b)
 {
-	size_t movements_counter;
-	size_t magic_number;
+	size_t	movements_counter;
+	size_t	magic_number;
 
 	movements_counter = 0;
 	magic_number = ft_square_number(stack_a->size) * 133 / 100;
-
 	while (stack_a->size != 0)
 	{
 		if (stack_a->head->index <= movements_counter)
@@ -76,7 +75,7 @@ void k_sort_1(t_stack *stack_a, t_stack *stack_b)
 	k_sort_2(stack_a, stack_b);
 }
 
-void sorter(t_stacks *stacks, size_t size)
+void	sorter(t_stacks *stacks, size_t size)
 {
 	if (size == 2)
 		sort_2_numbers(&stacks->stack_a);

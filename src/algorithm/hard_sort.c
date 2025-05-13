@@ -6,16 +6,16 @@
 /*   By: crizapat <crizapat@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 12:48:44 by crizapat          #+#    #+#             */
-/*   Updated: 2025/04/24 17:30:46 by crizapat         ###   ########.fr       */
+/*   Updated: 2025/05/12 09:55:57 by crizapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void sort_2_numbers(t_stack *stack_a)
+void	sort_2_numbers(t_stack *stack_a)
 {
-	t_node *first;
-	t_node *second;
+	t_node	*first;
+	t_node	*second;
 
 	first = stack_a->head;
 	second = stack_a->head->next;
@@ -23,11 +23,11 @@ void sort_2_numbers(t_stack *stack_a)
 		swap_a(stack_a, TRUE);
 }
 
-void sort_3_numbers(t_stack *stack_a)
+void	sort_3_numbers(t_stack *stack_a)
 {
-	t_node *first;
-	t_node *second;
-	t_node *third;
+	t_node	*first;
+	t_node	*second;
+	t_node	*third;
 
 	first = stack_a->head;
 	second = stack_a->head->next;
@@ -47,14 +47,14 @@ void sort_3_numbers(t_stack *stack_a)
 		if (second->index > third->index)
 			swap_a(stack_a, TRUE);
 	}
-	else 
+	else
 		swap_a(stack_a, TRUE);
 }
 
-void sort_4_numbers(t_stack *stack_a, t_stack *stack_b)
+void	sort_4_numbers(t_stack *stack_a, t_stack *stack_b)
 {
-	size_t	min_numb_on_stack;
-	size_t	movements_cost;
+	size_t		min_numb_on_stack;
+	size_t		movements_cost;
 
 	min_numb_on_stack = get_min_index(stack_a);
 	movements_cost = count_steps_to_index(stack_a, min_numb_on_stack);
@@ -72,16 +72,17 @@ void sort_4_numbers(t_stack *stack_a, t_stack *stack_b)
 	push_a(stack_a, stack_b, TRUE);
 }
 
-void sort_5_numbers(t_stack *stack_a, t_stack *stack_b)
+void	sort_5_numbers(t_stack *stack_a, t_stack *stack_b)
 {
-	size_t min_numb_on_stack;
-	size_t movements_cost;
+	size_t	min_numb_on_stack;
+	size_t	movements_cost;
 
 	min_numb_on_stack = get_min_index(stack_a);
 	movements_cost = count_steps_to_index(stack_a, min_numb_on_stack);
 	if (is_sorted(stack_a) == TRUE)
 		return ;
-	while (stack_a->head->index != min_numb_on_stack) {
+	while (stack_a->head->index != min_numb_on_stack)
+	{
 		if (movements_cost > 3)
 			reverse_rotate_a(stack_a, TRUE);
 		else
@@ -91,4 +92,3 @@ void sort_5_numbers(t_stack *stack_a, t_stack *stack_b)
 	sort_4_numbers(stack_a, stack_b);
 	push_a(stack_a, stack_b, TRUE);
 }
-
